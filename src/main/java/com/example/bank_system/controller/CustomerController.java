@@ -1,0 +1,46 @@
+package com.example.bank_system.controller;
+
+import com.example.bank_system.entity.Customer;
+import com.example.bank_system.service.CustomerService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/customers")
+public class CustomerController {
+
+    private final CustomerService customerService;
+
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+
+    }
+
+    @PostMapping
+    public Customer createCustomer(@RequestBody Customer customer){
+        return customerService.createCustomer(customer);
+    }
+
+    @GetMapping
+    public List<Customer> getCustomers(){
+        return customerService.getCustomers();
+    }
+
+    @GetMapping("/{id}")
+    public Customer getCustomer(@PathVariable Long id){
+        return customerService.getCustomer(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteCustomer(@PathVariable Long id){
+        customerService.deleteCustomer(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping("/{id}")
+    public Customer updateCustomer(@PathVariable Long id, @RequestBody Customer customer) {
+        return customerService.updateCustomer(id, customer);
+    }
+}
