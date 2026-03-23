@@ -15,6 +15,8 @@
 * Spring Data JPA
 * PostgreSQL
 * RESTful API
+* Spring Security + JWT
+* Postman(Test API)
 
 ##  Chức năng chính
 
@@ -33,11 +35,7 @@ git clone https://github.com/tritran2711/bank_system.git
 
 2. Cấu hình database trong `application.properties`
 
-3. Chạy:
-
-```bash
-mvn spring-boot:run
-```
+3. Chạy: Chạy file BankSystemApplication.java trong IDE
 
 ##  API mẫu
 
