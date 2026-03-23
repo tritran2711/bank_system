@@ -1,26 +1,69 @@
-Bank System API
+# 💳 Bank Management System
 
-// Giới thiệu
-Đây là project backend mô phỏng hệ thống ngân hàng, được xây dựng bằng Spring Boot.  
-Hệ thống cung cấp các API để quản lý khách hàng, tài khoản và thực hiện các giao dịch như nạp và rút tiền.
+##  Giới thiệu
 
----
+Đây là hệ thống backend mô phỏng quản lý ngân hàng, cho phép:
 
-// Chức năng chính
-- Đăng nhập và xác thực bằng JWT
-- Quản lý khách hàng (Customer)
-- Quản lý tài khoản ngân hàng (Account)
-- Nạp tiền (Deposit)
-- Rút tiền (Withdraw)
-- Xem lịch sử giao dịch
-- Thống kê giao dịch theo tài khoản
+* Tạo khách hàng
+* Tạo tài khoản
+* Nạp / rút tiền
+* Xem lịch sử giao dịch
 
----
+##  Công nghệ sử dụng
 
-// Công nghệ sử dụng
-- Java (Spring Boot)
-- Spring Security + JWT
-- JPA / Hibernate
-- PostgreSQL
-- Postman(Test API)
+* Java Spring Boot
+* Spring Data JPA
+* PostgreSQL
+* RESTful API
 
+##  Chức năng chính
+
+* Customer Management
+* Account Management
+* Transaction (Deposit / Withdraw)
+* Transaction History
+
+##  Hướng dẫn chạy
+
+1. Clone project:
+
+```bash
+git clone https://github.com/tritran2711/bank_system.git
+```
+
+2. Cấu hình database trong `application.properties`
+
+3. Chạy:
+
+```bash
+mvn spring-boot:run
+```
+
+##  API mẫu
+
+// Tạo customer
+
+POST /customers
+
+// Tạo account
+
+POST /accounts
+
+// Nạp tiền
+
+POST /transactions/deposit
+
+// Rút tiền
+
+POST /transactions/withdraw
+
+##  Điểm nổi bật
+
+* Áp dụng kiến trúc layered (Controller - Service - Repository)
+* Xử lý transaction cơ bản trong hệ thống ngân hàng
+* Thống kê và phân loại để phục vụ cho báo cáo
+
+##  Liên hệ
+
+tritran20031@gmail.com
+0938942430
