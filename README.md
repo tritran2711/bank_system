@@ -1,4 +1,4 @@
-# 🏦 Bank System API
+Bank System API
 
 // Giới thiệu
 Đây là project backend mô phỏng hệ thống ngân hàng, được xây dựng bằng Spring Boot.  
