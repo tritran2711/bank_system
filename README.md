@@ -24,6 +24,7 @@
 * Account Management
 * Transaction (Deposit / Withdraw)
 * Transaction History
+* Statistics(Thống kê)
 
 ##  Hướng dẫn chạy
 
