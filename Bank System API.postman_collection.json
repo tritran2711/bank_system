@@ -1,0 +1,306 @@
+{
+  "info": {
+    "_postman_id": "c2dff582-ada8-42f3-ac3c-65844e560878",
+    "name": "Bank System API",
+    "description": "Postman collection for testing Bank System Spring Boot project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53204705",
+    "_collection_link": "https://go.postman.co/collection/53204705-c2dff582-ada8-42f3-ac3c-65844e560878?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Create Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"name\":\"Tri Tran\",\n\"email\":\"tri@gmail.com\",\n\"phone\":\"0123456789\",\n\"address\":\"Hanoi\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. Get All Customers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/customers",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. Get Customer By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/customers/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "customers",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. Create Account",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\"accountNumber\":\"ACC001\",\n\"transactionLimit\":5000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/accounts/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "accounts",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. Get Accounts By Customer",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/accounts/customer/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "accounts",
+            "customer",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6.Get Account By ID",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "7. Gửi tiền",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/transactions/deposit?accountId=1&amount=2000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "transactions",
+            "deposit"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "1"
+            },
+            {
+              "key": "amount",
+              "value": "2000"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8. Chuyển tiền",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/transactions/withdraw?accountId=1&amount=500",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "transactions",
+            "withdraw"
+          ],
+          "query": [
+            {
+              "key": "accountId",
+              "value": "1"
+            },
+            {
+              "key": "amount",
+              "value": "500"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "9. Transaction History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/transactions/account/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "transactions",
+            "account",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "10.Delete",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "11.Thống kê số lượng account và transaction",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "12.Thống kê transaction theo AccountId",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "13.Thống kê customer theo địa chỉ",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "14.Thống kê loại giao dịch",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "15.Thống kê loại giao dịch theo AccountId",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "16.Phân loại tài khoản",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "17.Update Customer",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "18.Register",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "19.Login",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "20.Update Status Account",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
