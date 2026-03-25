@@ -17,7 +17,7 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
 
-    // 🔐 REGISTER
+    //  REGISTER
     public String register(LoginRequest request) {
 
         // check username tồn tại
@@ -37,7 +37,7 @@ public class AuthService {
         return "REGISTER SUCCESS";
     }
 
-    // 🔐 LOGIN
+    //  LOGIN
     public String login(LoginRequest request) {
 
         User user = userRepository.findByUsername(request.getUsername())
@@ -47,7 +47,7 @@ public class AuthService {
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             throw new RuntimeException("Wrong password");
         }
-    // 🔥 tạo token
+    //  tạo token
         return jwtService.generateToken(user.getUsername());
     }
 }
